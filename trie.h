@@ -18,15 +18,15 @@ namespace trie_class
 		//modifiers
 		int set_data(char input);
 		int set_array();
-		int set_next(int index, char input);
+		int set_next(int index);
 		//accessors
 		char get_data();
 		bool compare_data(char compare);
-		std::shared_ptr<node> get_next(int index);
+		std::weak_ptr<trie_class::node> get_next(int index);
 
 
 	private:
-		std::vector<std::shared_ptr<node>> next;
+		std::vector<std::shared_ptr<trie_class::node>> next;
 		char data;
 	};
 
@@ -35,6 +35,6 @@ namespace trie_class
 	public:
 
 	private:
-		shared_ptr<node> head;
+		std::shared_ptr<node> head;
 	};
 }
